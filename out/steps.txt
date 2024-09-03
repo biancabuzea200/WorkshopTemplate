@@ -1,0 +1,320 @@
+3:I[9275,[],""]
+4:I[1343,[],""]
+5:I[101,["699","static/chunks/8e1d74a4-eb75f3f0040c25c2.js","231","static/chunks/231-305d32964227623f.js","247","static/chunks/247-7bdb1809006123e3.js","185","static/chunks/app/layout-d4dd94ad256a36f0.js"],"default"]
+0:["ZPlzGtGnJXfpNrj141Qhp",[[["",{"children":["steps",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["steps",{"children":["__PAGE__",{},[["$L1","$L2"],null],null]},["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","steps","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","styles":null}],null]},[["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_6a861a","style":{"backgroundColor":"#fffefe"},"children":["$","div",null,{"className":"min-h-screen flex flex-col font-sans","children":[["$","$L5",null,{}],["$","main",null,{"className":"flex-grow","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"styles":null}]}],["$","footer",null,{"className":"bg-darkGray text-white py-6","children":["$","div",null,{"className":"container mx-auto px-6 md:px-12 lg:px-24 text-center"}]}]]}]}]}],null],null],[[["$","link","0",{"rel":"stylesheet","href":"/workshops-template/_next/static/css/114149a0e63cb46b.css","precedence":"next","crossOrigin":"$undefined"}]],[null,"$L6"]]]]]
+7:I[6304,["956","static/chunks/ee560e2c-f0a2cdbdec1dce9d.js","92","static/chunks/app/steps/page-aae4ac4382765843.js"],"default"]
+8:T933,<h4>Setup &#x26; Installation</h4>
+<ol>
+<li>Make sure that you have <code>Foundry</code> installed. If you do not, check out the [installation guide](See the installation guide in the book).</li>
+</ol>
+<pre><code class="hljs language-bash">npm install npx
+</code></pre>
+<ol start="2">
+<li>Create a folder for our project. Navigate to your command line and type:</li>
+</ol>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">mkdir</span> my-nft
+</code></pre>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">cd</span> my-nft
+</code></pre>
+<ol start="3">
+<li>Use <code>npm init</code> to initialize the project:</li>
+</ol>
+<pre><code class="hljs language-bash">npm init -y
+</code></pre>
+<ol start="4">
+<li>Install some packages:</li>
+</ol>
+<pre><code class="hljs language-bash">npm install dotenv fs
+</code></pre>
+<ol start="5">
+<li>Create an API Key in Fireblocks:</li>
+</ol>
+<p>Follow the steps below:</p>
+<ul>
+<li>Login to the <a href="https://sandbox.fireblocks.io" target="_blank" rel="noopener noreferrer">Sandbox Workspace</a></li>
+<li>Click on <code>Developer Center</code> on the bottom of the left sidebar (clickthrough the inital wizard and ignore the first API key that is being created)</li>
+<li>Click on <code>API Users</code> tab</li>
+<li>Click on <code>Add API User</code></li>
+<li>Give a name to the API User - <code>MyWorkshopKey</code></li>
+<li>Choose the <code>Editor</code> role from the Role dropdown</li>
+<li>Select <code>Automatic CSR</code></li>
+<li>Click on <code>Download private key</code></li>
+<li>Click on <code>Add User</code></li>
+<li>Move the downloaded private key file (<code>fireblocks_secret.key</code>) to the <code>my-nft</code> directory</li>
+<li>Copy the API key value from the <code>ID</code> column in the <code>MyWorkshopKey</code> key row</li>
+</ul>
+<ol start="6">
+<li>Create a <code>.env</code> file in the root directory (<code>/my-nft</code>):</li>
+</ol>
+<pre><code class="hljs language-bash">FIREBLOCKS_API_KEY=&#x3C;your_api_key>
+FIREBLOCKS_SECRET_KEY_PATH=<span class="hljs-string">"&#x3C;path_to_your_api_secret>"</span>
+</code></pre>
+<p>An example file would look like this:</p>
+<pre><code class="hljs language-bash">FIREBLOCKS_API_KEY=07daad66-c882-4d0e-9311-f744dd22fc61
+FIREBLOCKS_SECRET_KEY_PATH=<span class="hljs-string">"./fireblocks_secret.key"</span>
+</code></pre>9:Teea,<h3>What is Hardhat?</h3>
+<blockquote>
+<p>Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software. Learn more in the <a href="https://hardhat.org/" target="_blank" rel="noopener noreferrer">official documentation</a></p>
+</blockquote>
+<p>Let's install and setup Hardhat!</p>
+<ol>
+<li>Inside our <code>my-nft</code> project run:</li>
+</ol>
+<pre><code class="hljs language-bash">npm install --save-dev hardhat
+</code></pre>
+<ol start="2">
+<li>Install <code>hardhat-toolbox</code>:</li>
+</ol>
+<pre><code class="hljs language-bash">npm install @nomicfoundation/hardhat-toolbox
+</code></pre>
+<ol start="3">
+<li>Create Hardhat project:</li>
+</ol>
+<pre><code class="hljs language-bash">npx hardhat
+</code></pre>
+<ol start="4">
+<li>
+<p>Select <code>create an empty hardhat.config.js</code></p>
+</li>
+<li>
+<p>Create project folders:</p>
+</li>
+</ol>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">mkdir</span> contracts
+</code></pre>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">mkdir</span> scripts
+</code></pre>
+<ul>
+<li><code>contracts/</code> is where we’ll keep our NFT smart contract code</li>
+<li><code>scripts/</code> is where we’ll keep scripts to deploy and interact with our smart contract</li>
+</ul>
+<ol start="6">
+<li>Install the Fireblocks Hardhat Plugin. You can learn more about it in <a href="https://developers.fireblocks.com/reference/hardhat-plugin" target="_blank" rel="noopener noreferrer">the following guide</a>:</li>
+</ol>
+<pre><code class="hljs language-bash">npm install @fireblocks/hardhat-fireblocks
+</code></pre>
+<ol start="7">
+<li>Update <code>hardhat.config.js</code> file:</li>
+</ol>
+<pre><code class="hljs language-js"><span class="hljs-built_in">require</span>(<span class="hljs-string">"@nomicfoundation/hardhat-toolbox"</span>);
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"@fireblocks/hardhat-fireblocks"</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">ApiBaseUrl</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@fireblocks/fireblocks-web3-provider"</span>);
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).<span class="hljs-title function_">config</span>();
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>)
+
+
+<span class="hljs-keyword">const</span> apiKey = process.<span class="hljs-property">env</span>.<span class="hljs-property">FIREBLOCKS_API_KEY</span>;
+<span class="hljs-keyword">const</span> secretKey = fs.<span class="hljs-title function_">readFileSync</span>(
+  process.<span class="hljs-property">env</span>.<span class="hljs-property">FIREBLOCKS_SECRET_KEY_PATH</span>,
+  <span class="hljs-string">"utf-8"</span>
+);
+
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@type</span> import('hardhat/config').HardhatUserConfig */</span>
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+  <span class="hljs-attr">solidity</span>: <span class="hljs-string">"0.8.1"</span>,
+  <span class="hljs-attr">networks</span>: {
+    <span class="hljs-attr">sepolia</span>: {
+      <span class="hljs-attr">url</span>: <span class="hljs-string">"https://ethereum-sepolia-rpc.publicnode.com"</span>,
+      <span class="hljs-attr">fireblocks</span>: {
+        <span class="hljs-attr">apiBaseUrl</span>: <span class="hljs-title class_">ApiBaseUrl</span>.<span class="hljs-property">Sandbox</span>,
+        <span class="hljs-attr">privateKey</span>: secretKey,
+        <span class="hljs-attr">apiKey</span>: apiKey,
+        <span class="hljs-attr">vaultAccountIds</span>: <span class="hljs-string">"0"</span>,
+      },
+    },
+  },
+};
+
+</code></pre>a:Tb4e,<h3>Let's add our Smart Contract:</h3>
+<ol>
+<li>In the contracts directory, create a file called "MyNFT.sol" and paste the following contract code:</li>
+</ol>
+<pre><code class="hljs language-js"><span class="hljs-comment">//Contract based on [https://docs.openzeppelin.com/contracts/3.x/erc721](https://docs.openzeppelin.com/contracts/3.x/erc721)</span>
+<span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+pragma solidity ^<span class="hljs-number">0.8</span><span class="hljs-number">.1</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@openzeppelin/contracts/token/ERC721/ERC721.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@openzeppelin/contracts/utils/Counters.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@openzeppelin/contracts/access/Ownable.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol"</span>;
+
+contract <span class="hljs-title class_">MyNFT</span> is <span class="hljs-title class_">ERC721URIStorage</span>, <span class="hljs-title class_">Ownable</span> {
+    using <span class="hljs-title class_">Counters</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">Counters</span>.<span class="hljs-property">Counter</span>;
+    <span class="hljs-title class_">Counters</span>.<span class="hljs-property">Counter</span> private _tokenIds;
+
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title class_">ERC721</span>(<span class="hljs-string">"MyNFT"</span>, <span class="hljs-string">"NFT"</span>) {}
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">mintNFT</span>(<span class="hljs-params">address recipient, string memory tokenURI</span>)
+        public onlyOwner
+        returns (uint256)
+    {
+        _tokenIds.<span class="hljs-title function_">increment</span>();
+
+        uint256 newItemId = _tokenIds.<span class="hljs-title function_">current</span>();
+        <span class="hljs-title function_">_mint</span>(recipient, newItemId);
+        <span class="hljs-title function_">_setTokenURI</span>(newItemId, tokenURI);
+
+        <span class="hljs-keyword">return</span> newItemId;
+    }
+}
+</code></pre>
+<ol start="2">
+<li>We are using OpenZeppelin here so let's run:</li>
+</ol>
+<pre><code class="hljs language-bash">npm install @openzeppelin/contracts@4.8.1
+</code></pre>
+<ol start="3">
+<li>Compile our contract:</li>
+</ol>
+<pre><code class="hljs language-bash">npx hardhat compile
+</code></pre>
+<p>The output might contain some warning messages, you can ignore these.
+You are fine as long the final line of the ouput is:</p>
+<pre><code class="hljs language-bash">Compiled 14 Solidity files successfully (evm target: istanbul).
+</code></pre>b:T886,<h4>In this section we are going to write our Smart Contract deployment script and actually deploy our Smart Contract through your Fireblocks wallet!</h4>
+<p>1.Create <code>deploy.js</code> file in the <code>scripts</code> directory and write our deploy script:</p>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> hre = <span class="hljs-built_in">require</span>(<span class="hljs-string">"hardhat"</span>);
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> factory = <span class="hljs-keyword">await</span> hre.<span class="hljs-property">ethers</span>.<span class="hljs-title function_">getContractFactory</span>(<span class="hljs-string">"MyNFT"</span>);
+  <span class="hljs-keyword">const</span> contract = <span class="hljs-keyword">await</span> factory.<span class="hljs-title function_">deploy</span>();
+  <span class="hljs-keyword">const</span> receipt = <span class="hljs-keyword">await</span> contract.<span class="hljs-title function_">waitForDeployment</span>()
+
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Contract deployed to:"</span>, <span class="hljs-keyword">await</span> receipt.<span class="hljs-title function_">getAddress</span>());
+}
+
+
+<span class="hljs-title function_">main</span>().<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">error</span>) =></span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(error);
+  process.<span class="hljs-property">exitCode</span> = <span class="hljs-number">1</span>;
+});
+</code></pre>
+<ol start="2">
+<li>Install ethers.js:</li>
+</ol>
+<pre><code class="hljs language-bash">npm install --save-dev ethers
+</code></pre>
+<ol start="3">
+<li>Deploy our contract to Sepolia:</li>
+</ol>
+<pre><code class="hljs language-bash">npx hardhat --network sepolia run scripts/deploy.js
+</code></pre>
+<h3>Make sure to save the address of the contract!</h3>c:T1dd1,<h4>NFT Creation</h4>
+<ol>
+<li>
+<p>We need to create our NFT metadata now. The metadata will have an image URL and some details about the NFT we are creating.</p>
+</li>
+<li>
+<p>We will need to generate our NFT image first.
+Let's use some AI tool to create an image. You can use whatever tool you prefer but some options (not limited to) are:</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://www.midjourney.com/explore?tab=hot" target="_blank" rel="noopener noreferrer">Midjourney</a></li>
+<li><a href="https://www.imagine.art/" target="_blank" rel="noopener noreferrer">ImagineArt</a></li>
+<li><a href="https://davinci.ai/" target="_blank" rel="noopener noreferrer">DaVinci</a></li>
+</ul>
+<p>I am going to use the following image but you are more than welcome to use your imagination and go with anything you like!
+<img src="/workshops-template/images/my-nft-dog.png" alt="My Image"></p>
+<ol start="3">
+<li>
+<p>We need to upload this image somewhere so we will have a URL to add to our metadata. We will use Pinata, a convenient IPFS API and toolkit, to store our NFT asset and metadata to ensure our NFT is truly decentralized. If you don’t have a Pinata account, sign up for a free account <a href="https://app.pinata.cloud/" target="_blank" rel="noopener noreferrer">here</a> and complete the steps to verify your email.</p>
+</li>
+<li>
+<p>Once you’ve created an account:</p>
+</li>
+</ol>
+<ul>
+<li>Navigate to the <code>Files</code> page and click the blue <code>Upload</code> button at the top-left of the page.</li>
+<li>Upload an image to Pinata — this will be the image asset for your NFT. Feel free to name the asset whatever you wish.</li>
+<li>Once uploaded, you'll see the file info in the table on the <code>Files</code> page.</li>
+<li>You'll also see a <code>CID</code> column. You can copy the <code>CID</code> by clicking the copy button next to it. You can view your upload at: https://gateway.pinata.cloud/ipfs/&#x3C;CID>.</li>
+</ul>
+<ol start="5">
+<li>In our project root directory (my-nft) create <code>nft-metadata.json</code>:</li>
+</ol>
+<pre><code class="hljs language-shell">{
+  "description": "&#x3C;YOUR_DESCRIPTION>",
+  "image": "ipfs://&#x3C;IMAGE_CID>",
+  "name": "&#x3C;NAME>"
+}
+</code></pre>
+<ol start="6">
+<li>
+<p>Upload the <code>nft-metadata.json</code> to Pinata the same way as the previously uploaded image.</p>
+</li>
+<li>
+<p>In order to mint the NFT we are going to use Fireblocks Web3 Provider and Web3.js.
+Install the relevant packages:</p>
+</li>
+</ol>
+<pre><code class="hljs language-bash">npm install web3 @fireblocks/fireblocks-web3-provider
+</code></pre>
+<ol start="7">
+<li>Create <code>mint-nft.js</code> script in <code>scripts</code> directory:</li>
+</ol>
+<pre><code class="hljs language-js"><span class="hljs-keyword">const</span> {
+  <span class="hljs-title class_">FireblocksWeb3Provider</span>,
+  <span class="hljs-title class_">ApiBaseUrl</span>,
+  <span class="hljs-title class_">ChainId</span>,
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@fireblocks/fireblocks-web3-provider"</span>);
+<span class="hljs-keyword">const</span> { <span class="hljs-title class_">Web3</span> } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"web3"</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"dotenv"</span>).<span class="hljs-title function_">config</span>();
+
+
+<span class="hljs-keyword">const</span> contractAddress = <span class="hljs-string">"&#x3C;YOUR_DEPLOYED_CONTRACT_ADDRESS>"</span>;
+<span class="hljs-keyword">const</span> metadataCID = <span class="hljs-string">"&#x3C;YOUR_METADATA_CID>"</span>;
+
+<span class="hljs-keyword">const</span> contract = <span class="hljs-built_in">require</span>(<span class="hljs-string">"../artifacts/contracts/MyNFT.sol/MyNFT.json"</span>);
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">mintNFT</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params">URI</span>) => {
+  <span class="hljs-keyword">const</span> apiKey = process.<span class="hljs-property">env</span>.<span class="hljs-property">FIREBLOCKS_API_KEY</span>;
+  <span class="hljs-keyword">const</span> secretKey = fs.<span class="hljs-title function_">readFileSync</span>(
+    process.<span class="hljs-property">env</span>.<span class="hljs-property">FIREBLOCKS_SECRET_KEY_PATH</span>,
+    <span class="hljs-string">"utf-8"</span>
+  );
+
+  <span class="hljs-keyword">const</span> eip1193Provider = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FireblocksWeb3Provider</span>({
+    <span class="hljs-attr">chainId</span>: <span class="hljs-title class_">ChainId</span>.<span class="hljs-property">SEPOLIA</span>,
+    <span class="hljs-attr">apiBaseUrl</span>: <span class="hljs-title class_">ApiBaseUrl</span>.<span class="hljs-property">Sandbox</span>,
+    <span class="hljs-attr">privateKey</span>: secretKey,
+    <span class="hljs-attr">apiKey</span>: apiKey,
+    <span class="hljs-attr">vaultAccountIds</span>: <span class="hljs-string">"0"</span>,
+  });
+
+  <span class="hljs-keyword">const</span> web3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Web3</span>(eip1193Provider);
+  <span class="hljs-keyword">const</span> myAddr = <span class="hljs-keyword">await</span> web3.<span class="hljs-property">eth</span>.<span class="hljs-title function_">getAccounts</span>();
+  <span class="hljs-keyword">const</span> myContract = <span class="hljs-keyword">new</span> web3.<span class="hljs-property">eth</span>.<span class="hljs-title class_">Contract</span>(contract.<span class="hljs-property">abi</span>, contractAddress);
+
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> tx = <span class="hljs-keyword">await</span> myContract.<span class="hljs-property">methods</span>.<span class="hljs-title function_">mintNFT</span>(myAddr[<span class="hljs-number">0</span>], <span class="hljs-variable constant_">URI</span>).<span class="hljs-title function_">send</span>({
+      <span class="hljs-attr">from</span>: myAddr[<span class="hljs-number">0</span>],
+    });
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Mint Transaction Hash:"</span>, tx.<span class="hljs-property">logs</span>[<span class="hljs-number">0</span>].<span class="hljs-property">transactionHash</span>);
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Error Caught in Catch Statement: "</span>, e);
+  }
+};
+
+<span class="hljs-title function_">mintNFT</span>(<span class="hljs-string">`https://gateway.pinata.cloud/ipfs/<span class="hljs-subst">${metadataCID}</span>`</span>);
+</code></pre>
+<h4>Make sure to update the following parameters:</h4>
+<ul>
+<li><code>contractAddress</code> - this is the address of the deployed contract from the previous step</li>
+<li><code>metadataCID</code> - this is the CID of the uploaded metadata file to Pinata (do not get confused with the image CID here)</li>
+</ul>
+<ol start="8">
+<li>
+<p>Run the <code>mint-nft.js</code> script (make sure to run it from the root directory- <code>/my-nft</code>):
+<code>node scripts/mint-nft.js</code></p>
+</li>
+<li>
+<p>Go to your Fireblocks Sandbox workspace -> <code>NFTs</code> section on the left hand sidebar and explore your newly created NFT!</p>
+</li>
+</ol>
+<h3>And we're done :)</h3>2:["$","div",null,{"className":"container mx-auto px-6 md:px-12 lg:px-24","children":["$","$L7",null,{"steps":[{"id":1,"title":"Step 1: Setup","file":"step1.md","content":"$8"},{"id":2,"title":"Step 2: Configure Foundry","file":"step2.md","content":"$9"},{"id":3,"title":"Step 3: Compile our Smart Contracts","file":"step3.md","content":"$a"},{"id":4,"title":"Step 4: Deploy our Smart Contracts","file":"step4.md","content":"$b"},{"id":5,"title":"Step 5: Send ETH and get some ERC20","file":"step5.md","content":"$c"}]}]}]
+6:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Oracle Workshop"}],["$","link","3",{"rel":"icon","href":"https://openmoji.org/data/color/svg/1F4D6.svg"}],["$","meta","4",{"name":"next-size-adjust"}]]
+1:null
